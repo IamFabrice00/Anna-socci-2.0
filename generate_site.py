@@ -400,7 +400,7 @@ def generate_site():
     def create_page(path, title, depth, filtered_photos):
         hero_html = ''
         if title == "PORTFOLIO":
-            hero_html = f'<div class="hero-banner"><img src="{{depth}}assets/img/hero-banner.jpg" alt="Anna Socci Hero Banner"></div>'
+            hero_html = '<div class="hero-banner"><img src="assets/img/hero-banner.jpg" alt="Anna Socci Hero Banner"></div>'
             
         content = HTML_TEMPLATE.format(
             title=title, 
