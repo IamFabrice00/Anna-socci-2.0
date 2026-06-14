@@ -23,6 +23,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <body>
     <header class="navbar">
         <a href="{depth}index.html" class="logo">ANNA SOCCI</a>
+        <div class="desktop-nav">
+            <a href="{depth}about.html">ABOUT</a>
+            <a href="{depth}category.html">CATEGORY</a>
+            <a href="{depth}contacts.html">CONTACTS</a>
+            <a href="https://www.instagram.com/socciografando" target="_blank" class="instagram-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+        </div>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
 
@@ -108,6 +116,14 @@ body {
 }
 
 .navbar.scrolled { background: rgba(0,0,0,0.95); }
+
+.desktop-nav { display: none; }
+@media (min-width: 768px) {
+    .desktop-nav { display: flex; align-items: center; gap: 30px; }
+    .desktop-nav a { color: var(--text-color); text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
+    .desktop-nav a:hover { color: var(--accent-color); }
+    .instagram-icon { display: flex; align-items: center; }
+}
 
 .hero-banner {
     width: 100%;
@@ -414,6 +430,11 @@ def generate_site():
             
     # Crea Home
     create_page(os.path.join(OUTPUT_DIR, "index.html"), "PORTFOLIO", "", photos)
+    
+    # Altre Pagine Principali
+    create_page(os.path.join(OUTPUT_DIR, "about.html"), "ABOUT", "", [])
+    create_page(os.path.join(OUTPUT_DIR, "category.html"), "CATEGORY", "", photos)
+    create_page(os.path.join(OUTPUT_DIR, "contacts.html"), "CONTACTS", "", [])
     
     # Crea Pagine Categoria
     for cat in CATEGORIES:

@@ -33,6 +33,14 @@ body {
 
 .navbar.scrolled { background: rgba(0,0,0,0.95); }
 
+.desktop-nav { display: none; }
+@media (min-width: 768px) {
+    .desktop-nav { display: flex; align-items: center; gap: 30px; }
+    .desktop-nav a { color: var(--text-color); text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
+    .desktop-nav a:hover { color: var(--accent-color); }
+    .instagram-icon { display: flex; align-items: center; }
+}
+
 .hero-banner {
     width: 100%;
     margin-top: 70px;

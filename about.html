@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANNA SOCCI - ABOUT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">ANNA SOCCI</a>
+        <div class="desktop-nav">
+            <a href="about.html">ABOUT</a>
+            <a href="category.html">CATEGORY</a>
+            <a href="contacts.html">CONTACTS</a>
+            <a href="https://www.instagram.com/socciografando" target="_blank" class="instagram-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <div class="sidebar-menu" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">✕</div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="wedding/index.html">WEDDING</a>
+<a href="campaigns/index.html">CAMPAIGNS</a>
+<a href="celebrities/index.html">CELEBRITIES</a>
+<a href="beauty/index.html">BEAUTY</a>
+<a href="jewelry/index.html">JEWELRY</a>
+<a href="bridal/index.html">BRIDAL</a>
+<a href="nature/index.html">NATURE</a>
+<a href="landscapes/index.html">LANDSCAPES</a>
+<a href="travel/index.html">TRAVEL</a>
+<a href="fine-art/index.html">FINE ART</a>
+
+        </nav>
+    </div>
+
+    
+
+    <main class="gallery-container">
+        <h1 class="page-title">ABOUT</h1>
+        <div class="masonry-grid" id="masonry">
+            <!-- Grid generated via JS -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>CONTACTS</h3>
+                <a href="mailto:annasocci@gmail.com">annasocci@gmail.com</a>
+                <a href="#">Privacy and cookie policy</a>
+            </div>
+            <div class="socials">
+                <a href="https://www.instagram.com/socciografando" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 ANNA SOCCI.</div>
+    </footer>
+
+    <div class="cookie-banner" id="cookie-banner">
+        <p>This website uses only essential cookies to ensure proper functioning and improve your browsing experience.</p>
+        <div class="cookie-actions">
+            <a href="#">Privacy policy</a>
+            <button onclick="acceptCookies()">Ok</button>
+        </div>
+    </div>
+
+    <script src="assets/js/gallery.js"></script>
+    <script>
+        const photos = [];
+        initGallery(photos, '');
+    </script>
+</body>
+</html>
