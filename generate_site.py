@@ -34,6 +34,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </nav>
     </div>
 
+    {hero_section}
+
     <main class="gallery-container">
         <h1 class="page-title">{title}</h1>
         <div class="masonry-grid" id="masonry">
@@ -106,6 +108,18 @@ body {
 }
 
 .navbar.scrolled { background: rgba(0,0,0,0.95); }
+
+.hero-banner {
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+.hero-banner img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    display: block;
+}
 
 .logo {
     font-family: 'Playfair Display', serif;
@@ -384,10 +398,15 @@ def generate_site():
 
     # Funzione helper per creare pagine
     def create_page(path, title, depth, filtered_photos):
+        hero_html = ''
+        if title == "PORTFOLIO":
+            hero_html = f'<div class="hero-banner"><img src="{{depth}}assets/img/hero-banner.jpg" alt="Anna Socci Hero Banner"></div>'
+            
         content = HTML_TEMPLATE.format(
             title=title, 
             depth=depth, 
             nav_links=nav_links.format(depth=depth),
+            hero_section=hero_html,
             photos_json=json.dumps(filtered_photos)
         )
         with open(path, "w", encoding="utf-8") as f:
