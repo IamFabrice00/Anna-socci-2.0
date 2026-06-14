@@ -25,7 +25,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <a href="{depth}index.html" class="logo">ANNA SOCCI</a>
         <div class="desktop-nav">
             <a href="{depth}about.html">ABOUT</a>
-            <a href="{depth}category.html">CATEGORY</a>
+            <div class="dropdown">
+                <a href="{depth}category.html" class="dropbtn">CATEGORY ▾</a>
+                <div class="dropdown-content">
+                    {nav_links}
+                </div>
+            </div>
             <a href="{depth}contacts.html">CONTACTS</a>
             <a href="https://www.instagram.com/socciografando" target="_blank" class="instagram-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -123,7 +128,14 @@ body {
     .desktop-nav a { color: var(--text-color); text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
     .desktop-nav a:hover { color: var(--accent-color); }
     .instagram-icon { display: flex; align-items: center; }
+    .menu-icon { display: none; }
 }
+
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content { display: none; position: absolute; background-color: rgba(10,10,10,0.95); min-width: 200px; z-index: 100; top: 100%; left: 0; padding: 10px 0; border: 1px solid rgba(255,255,255,0.1); }
+.dropdown-content a { color: var(--text-color); padding: 10px 20px; text-decoration: none; display: block; font-size: 11px; }
+.dropdown-content a:hover { background-color: rgba(255,255,255,0.1); color: #fff; }
+.dropdown:hover .dropdown-content { display: block; }
 
 .hero-banner {
     width: 100%;

@@ -39,7 +39,14 @@ body {
     .desktop-nav a { color: var(--text-color); text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
     .desktop-nav a:hover { color: var(--accent-color); }
     .instagram-icon { display: flex; align-items: center; }
+    .menu-icon { display: none; }
 }
+
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content { display: none; position: absolute; background-color: rgba(10,10,10,0.95); min-width: 200px; z-index: 100; top: 100%; left: 0; padding: 10px 0; border: 1px solid rgba(255,255,255,0.1); }
+.dropdown-content a { color: var(--text-color); padding: 10px 20px; text-decoration: none; display: block; font-size: 11px; }
+.dropdown-content a:hover { background-color: rgba(255,255,255,0.1); color: #fff; }
+.dropdown:hover .dropdown-content { display: block; }
 
 .hero-banner {
     width: 100%;
