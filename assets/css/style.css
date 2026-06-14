@@ -215,6 +215,15 @@ footer {
 .cookie-actions a { color: var(--text-color); }
 .cookie-actions button { background: var(--text-color); color: var(--bg-color); border: none; padding: 8px 24px; cursor: pointer; font-weight: bold; border-radius: 2px;}
 
+/* About Section */
+.about-section { display: flex; flex-direction: column; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+@media (min-width: 768px) { .about-section { flex-direction: row; justify-content: space-between; align-items: center; gap: 80px; } }
+.about-text { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.about-text h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 30px; font-weight: 400; line-height: 1.5; letter-spacing: 2px;}
+.about-text p { font-family: 'Inter', sans-serif; font-size: 15px; margin-bottom: 20px; color: #ccc; line-height: 1.8;}
+.about-image { flex: 1; display: flex; justify-content: center;}
+.about-image img { width: 100%; max-width: 500px; height: auto; object-fit: cover; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
 /* Lightbox */
 .lightbox {
     position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000;

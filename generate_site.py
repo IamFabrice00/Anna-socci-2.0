@@ -51,9 +51,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     <main class="gallery-container">
         <h1 class="page-title">{title}</h1>
-        <div class="masonry-grid" id="masonry">
-            <!-- Grid generated via JS -->
-        </div>
+        {main_content}
     </main>
 
     <footer>
@@ -304,6 +302,15 @@ footer {
 .cookie-actions a { color: var(--text-color); }
 .cookie-actions button { background: var(--text-color); color: var(--bg-color); border: none; padding: 8px 24px; cursor: pointer; font-weight: bold; border-radius: 2px;}
 
+/* About Section */
+.about-section { display: flex; flex-direction: column; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+@media (min-width: 768px) { .about-section { flex-direction: row; justify-content: space-between; align-items: center; gap: 80px; } }
+.about-text { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.about-text h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 30px; font-weight: 400; line-height: 1.5; letter-spacing: 2px;}
+.about-text p { font-family: 'Inter', sans-serif; font-size: 15px; margin-bottom: 20px; color: #ccc; line-height: 1.8;}
+.about-image { flex: 1; display: flex; justify-content: center;}
+.about-image img { width: 100%; max-width: 500px; height: auto; object-fit: cover; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
 /* Lightbox */
 .lightbox {
     position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000;
@@ -425,16 +432,19 @@ def generate_site():
         nav_links += f'<a href="{{depth}}{cat.lower().replace(" ", "-")}/index.html">{cat.upper()}</a>\n'
 
     # Funzione helper per creare pagine
-    def create_page(path, title, depth, filtered_photos):
+    def create_page(path, title, depth, filtered_photos, custom_html=None):
         hero_html = ''
         if title == "PORTFOLIO":
             hero_html = '<div class="hero-banner"><img src="assets/img/hero-banner.jpg" alt="Anna Socci Hero Banner"></div>'
+            
+        main_content = custom_html if custom_html else '<div class="masonry-grid" id="masonry"><!-- Grid generated via JS --></div>'
             
         content = HTML_TEMPLATE.format(
             title=title, 
             depth=depth, 
             nav_links=nav_links.format(depth=depth),
             hero_section=hero_html,
+            main_content=main_content,
             photos_json=json.dumps(filtered_photos)
         )
         with open(path, "w", encoding="utf-8") as f:
@@ -444,7 +454,19 @@ def generate_site():
     create_page(os.path.join(OUTPUT_DIR, "index.html"), "PORTFOLIO", "", photos)
     
     # Altre Pagine Principali
-    create_page(os.path.join(OUTPUT_DIR, "about.html"), "ABOUT", "", [])
+    about_html = """
+    <div class="about-section">
+        <div class="about-text">
+            <h2>Sono Anna Socci, fotografa tra la Costiera Amalfitana e Milano.</h2>
+            <p>La fotografia è il mio modo di osservare e raccontare il mondo. Crescere tra la luce e i colori della Costiera ha influenzato profondamente il mio sguardo, insegnandomi a cogliere la bellezza nei dettagli e nelle emozioni autentiche.</p>
+            <p>Attraverso i miei lavori cerco di creare immagini sincere, capaci di raccontare persone, luoghi e storie con sensibilità e naturalezza. Ogni scatto nasce dall'incontro tra osservazione, intuizione e ricerca di autenticità, trasformando attimi reali in racconti visivi senza tempo.</p>
+        </div>
+        <div class="about-image">
+            <img src="assets/img/anna-about.jpg" alt="Anna Socci">
+        </div>
+    </div>
+    """
+    create_page(os.path.join(OUTPUT_DIR, "about.html"), "ABOUT", "", [], custom_html=about_html)
     create_page(os.path.join(OUTPUT_DIR, "category.html"), "CATEGORY", "", photos)
     create_page(os.path.join(OUTPUT_DIR, "contacts.html"), "CONTACTS", "", [])
     
