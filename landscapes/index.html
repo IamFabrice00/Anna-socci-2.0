@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANNA SOCCI - LANDSCAPES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo">ANNA SOCCI</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <div class="sidebar-menu" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">✕</div>
+        <nav>
+            <a href="../index.html">HOME</a>
+            <a href="../wedding/index.html">WEDDING</a>
+<a href="../campaigns/index.html">CAMPAIGNS</a>
+<a href="../celebrities/index.html">CELEBRITIES</a>
+<a href="../beauty/index.html">BEAUTY</a>
+<a href="../jewelry/index.html">JEWELRY</a>
+<a href="../bridal/index.html">BRIDAL</a>
+<a href="../nature/index.html">NATURE</a>
+<a href="../landscapes/index.html">LANDSCAPES</a>
+<a href="../travel/index.html">TRAVEL</a>
+<a href="../fine-art/index.html">FINE ART</a>
+
+        </nav>
+    </div>
+
+    <main class="gallery-container">
+        <h1 class="page-title">LANDSCAPES</h1>
+        <div class="masonry-grid" id="masonry">
+            <!-- Grid generated via JS -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>CONTACTS</h3>
+                <a href="mailto:annasocci@gmail.com">annasocci@gmail.com</a>
+                <a href="#">Privacy and cookie policy</a>
+            </div>
+            <div class="socials">
+                <a href="https://www.instagram.com/socciografando" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 ANNA SOCCI.</div>
+    </footer>
+
+    <div class="cookie-banner" id="cookie-banner">
+        <p>This website uses only essential cookies to ensure proper functioning and improve your browsing experience.</p>
+        <div class="cookie-actions">
+            <a href="#">Privacy policy</a>
+            <button onclick="acceptCookies()">Ok</button>
+        </div>
+    </div>
+
+    <script src="../assets/js/gallery.js"></script>
+    <script>
+        const photos = [{"id": "photo_92297", "filename": "foto_108.jpg", "category": "Landscapes", "confidence": 74, "secondary_category": "Jewelry", "tags": ["closeup", "portrait", "dramatic lighting"], "needs_review": false, "notes": "AI analysis complete for foto_108.jpg"}, {"id": "photo_92319", "filename": "foto_144.jpg", "category": "Landscapes", "confidence": 85, "secondary_category": "Bridal", "tags": ["closeup", "vibrant", "dramatic lighting"], "needs_review": false, "notes": "AI analysis complete for foto_144.jpg"}, {"id": "photo_71151", "filename": "foto_154.jpg", "category": "Landscapes", "confidence": 86, "secondary_category": "Bridal", "tags": ["portrait", "macro", "monochrome"], "needs_review": false, "notes": "AI analysis complete for foto_154.jpg"}, {"id": "photo_95782", "filename": "foto_164.jpg", "category": "Landscapes", "confidence": 73, "secondary_category": "Celebrities", "tags": ["studio", "monochrome", "outdoor"], "needs_review": false, "notes": "AI analysis complete for foto_164.jpg"}, {"id": "photo_11832", "filename": "foto_18.jpg", "category": "Landscapes", "confidence": 87, "secondary_category": "Travel", "tags": ["closeup", "macro", "outdoor"], "needs_review": false, "notes": "AI analysis complete for foto_18.jpg"}, {"id": "photo_70788", "filename": "foto_184.jpg", "category": "Landscapes", "confidence": 83, "secondary_category": "Celebrities", "tags": ["portrait", "outdoor", "luxury"], "needs_review": false, "notes": "AI analysis complete for foto_184.jpg"}, {"id": "photo_41539", "filename": "foto_216.jpg", "category": "Landscapes", "confidence": 57, "secondary_category": "Campaigns", "tags": ["outdoor", "luxury", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_216.jpg"}, {"id": "photo_54508", "filename": "foto_224.jpg", "category": "Landscapes", "confidence": 95, "secondary_category": "Beauty", "tags": ["golden hour", "outdoor", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_224.jpg"}, {"id": "photo_58709", "filename": "foto_236.jpg", "category": "Landscapes", "confidence": 82, "secondary_category": "Jewelry", "tags": ["vibrant", "dramatic lighting", "closeup"], "needs_review": false, "notes": "AI analysis complete for foto_236.jpg"}, {"id": "photo_49456", "filename": "foto_247.png", "category": "Landscapes", "confidence": 52, "secondary_category": "Celebrities", "tags": ["macro", "vibrant", "golden hour"], "needs_review": false, "notes": "AI analysis complete for foto_247.png"}, {"id": "photo_93368", "filename": "foto_252.png", "category": "Landscapes", "confidence": 98, "secondary_category": "Beauty", "tags": ["macro", "vibrant", "monochrome"], "needs_review": false, "notes": "AI analysis complete for foto_252.png"}, {"id": "photo_97902", "filename": "foto_266.png", "category": "Landscapes", "confidence": 84, "secondary_category": "Nature", "tags": ["closeup", "macro", "outdoor"], "needs_review": false, "notes": "AI analysis complete for foto_266.png"}, {"id": "photo_10426", "filename": "foto_278.png", "category": "Landscapes", "confidence": 96, "secondary_category": "Wedding", "tags": ["portrait", "studio", "luxury"], "needs_review": false, "notes": "AI analysis complete for foto_278.png"}, {"id": "photo_31007", "filename": "foto_279.png", "category": "Landscapes", "confidence": 54, "secondary_category": "Nature", "tags": ["outdoor", "dramatic lighting", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_279.png"}, {"id": "photo_85437", "filename": "foto_281.png", "category": "Landscapes", "confidence": 53, "secondary_category": "Jewelry", "tags": ["outdoor", "studio", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_281.png"}, {"id": "photo_74867", "filename": "foto_322.jpg", "category": "Landscapes", "confidence": 83, "secondary_category": "Beauty", "tags": ["outdoor", "luxury", "studio"], "needs_review": false, "notes": "AI analysis complete for foto_322.jpg"}, {"id": "photo_57973", "filename": "foto_325.png", "category": "Landscapes", "confidence": 72, "secondary_category": "Nature", "tags": ["outdoor", "monochrome", "luxury"], "needs_review": false, "notes": "AI analysis complete for foto_325.png"}, {"id": "photo_22747", "filename": "foto_34.jpg", "category": "Landscapes", "confidence": 92, "secondary_category": "Beauty", "tags": ["portrait", "closeup", "monochrome"], "needs_review": false, "notes": "AI analysis complete for foto_34.jpg"}, {"id": "photo_34865", "filename": "foto_346.jpg", "category": "Landscapes", "confidence": 84, "secondary_category": "Campaigns", "tags": ["outdoor", "golden hour", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_346.jpg"}, {"id": "photo_89610", "filename": "foto_372.jpg", "category": "Landscapes", "confidence": 67, "secondary_category": "Wedding", "tags": ["monochrome", "outdoor", "dramatic lighting"], "needs_review": false, "notes": "AI analysis complete for foto_372.jpg"}, {"id": "photo_48865", "filename": "foto_374.jpg", "category": "Landscapes", "confidence": 87, "secondary_category": "Beauty", "tags": ["monochrome", "golden hour", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_374.jpg"}, {"id": "photo_79709", "filename": "foto_398.jpg", "category": "Landscapes", "confidence": 76, "secondary_category": "Wedding", "tags": ["monochrome", "vibrant", "luxury"], "needs_review": false, "notes": "AI analysis complete for foto_398.jpg"}, {"id": "photo_21623", "filename": "foto_40.jpg", "category": "Landscapes", "confidence": 76, "secondary_category": "Nature", "tags": ["studio", "closeup", "monochrome"], "needs_review": false, "notes": "AI analysis complete for foto_40.jpg"}, {"id": "photo_53508", "filename": "foto_464.jpg", "category": "Landscapes", "confidence": 73, "secondary_category": "Beauty", "tags": ["closeup", "portrait", "luxury"], "needs_review": false, "notes": "AI analysis complete for foto_464.jpg"}, {"id": "photo_50043", "filename": "foto_468.jpg", "category": "Landscapes", "confidence": 76, "secondary_category": "Celebrities", "tags": ["vibrant", "outdoor", "luxury"], "needs_review": false, "notes": "AI analysis complete for foto_468.jpg"}, {"id": "photo_48405", "filename": "foto_488.jpg", "category": "Landscapes", "confidence": 75, "secondary_category": "Wedding", "tags": ["macro", "dramatic lighting", "studio"], "needs_review": false, "notes": "AI analysis complete for foto_488.jpg"}, {"id": "photo_62067", "filename": "foto_492.jpg", "category": "Landscapes", "confidence": 90, "secondary_category": "Nature", "tags": ["luxury", "monochrome", "macro"], "needs_review": false, "notes": "AI analysis complete for foto_492.jpg"}, {"id": "photo_81250", "filename": "foto_512.jpg", "category": "Landscapes", "confidence": 74, "secondary_category": "Bridal", "tags": ["monochrome", "outdoor", "luxury"], "needs_review": false, "notes": "AI analysis complete for foto_512.jpg"}, {"id": "photo_39160", "filename": "foto_532.jpg", "category": "Landscapes", "confidence": 84, "secondary_category": "Travel", "tags": ["outdoor", "monochrome", "vibrant"], "needs_review": false, "notes": "AI analysis complete for foto_532.jpg"}, {"id": "photo_81793", "filename": "foto_580.jpg", "category": "Landscapes", "confidence": 76, "secondary_category": "Jewelry", "tags": ["golden hour", "monochrome", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_580.jpg"}, {"id": "photo_82572", "filename": "foto_80.jpg", "category": "Landscapes", "confidence": 57, "secondary_category": "Nature", "tags": ["luxury", "outdoor", "dramatic lighting"], "needs_review": false, "notes": "AI analysis complete for foto_80.jpg"}, {"id": "photo_10008", "filename": "foto_82.jpg", "category": "Landscapes", "confidence": 93, "secondary_category": "Bridal", "tags": ["luxury", "closeup", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_82.jpg"}, {"id": "photo_19381", "filename": "foto_90.jpg", "category": "Landscapes", "confidence": 90, "secondary_category": "Jewelry", "tags": ["outdoor", "monochrome", "portrait"], "needs_review": false, "notes": "AI analysis complete for foto_90.jpg"}];
+        initGallery(photos, '../');
+    </script>
+</body>
+</html>
