@@ -103,6 +103,10 @@ body {
 
 .sidebar-menu nav a:hover { color: var(--accent-color); }
 
+.mobile-dropdown-content { display: none; padding-left: 20px; margin-top: 5px; margin-bottom: 10px; }
+.mobile-dropdown-content.open { display: block; }
+.mobile-dropdown-content a { font-size: 12px; margin-bottom: 15px; color: #ccc; }
+
 .close-btn {
     position: absolute;
     top: 25px; right: 40px;

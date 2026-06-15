@@ -43,7 +43,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class="close-btn" onclick="toggleMenu()">✕</div>
         <nav>
             <a href="{depth}index.html">HOME</a>
-            {nav_links}
+            <a href="{depth}about.html">ABOUT</a>
+            <div class="mobile-dropdown">
+                <a href="#" onclick="toggleMobileDropdown(event)">CATEGORY ▾</a>
+                <div class="mobile-dropdown-content" id="mobile-category">
+                    {nav_links}
+                </div>
+            </div>
+            <a href="{depth}contacts.html">CONTACTS</a>
         </nav>
     </div>
 
@@ -190,6 +197,10 @@ body {
 
 .sidebar-menu nav a:hover { color: var(--accent-color); }
 
+.mobile-dropdown-content { display: none; padding-left: 20px; margin-top: 5px; margin-bottom: 10px; }
+.mobile-dropdown-content.open { display: block; }
+.mobile-dropdown-content a { font-size: 12px; margin-bottom: 15px; color: #ccc; }
+
 .close-btn {
     position: absolute;
     top: 25px; right: 40px;
@@ -328,6 +339,11 @@ footer {
 JS_CONTENT = """
 function toggleMenu() {
     document.getElementById('sidebar').classList.toggle('open');
+}
+
+function toggleMobileDropdown(event) {
+    event.preventDefault();
+    document.getElementById('mobile-category').classList.toggle('open');
 }
 
 window.addEventListener('scroll', () => {

@@ -3,6 +3,11 @@ function toggleMenu() {
     document.getElementById('sidebar').classList.toggle('open');
 }
 
+function toggleMobileDropdown(event) {
+    event.preventDefault();
+    document.getElementById('mobile-category').classList.toggle('open');
+}
+
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.navbar');
     if (window.scrollY > 50) nav.classList.add('scrolled');
