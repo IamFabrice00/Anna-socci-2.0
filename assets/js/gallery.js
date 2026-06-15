@@ -8,10 +8,23 @@ function toggleMobileDropdown(event) {
     document.getElementById('mobile-category').classList.toggle('open');
 }
 
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 50;
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        }
+    }
+}
+
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.navbar');
     if (window.scrollY > 50) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
+    reveal();
 });
 
 function acceptCookies() {
@@ -53,7 +66,7 @@ function initGallery(photos, pathDepth) {
     let html = '';
     photos.forEach((p, index) => {
         html += `
-        <div class="grid-item" onclick="openLightbox(${index})">
+        <div class="grid-item reveal" onclick="openLightbox(${index})">
             <img src="${basePath}photos/thumbs/${p.filename}" loading="lazy" alt="${p.tags.join(', ')}">
             <div class="overlay">
                 <h3>${p.category}</h3>
@@ -63,6 +76,7 @@ function initGallery(photos, pathDepth) {
         `;
     });
     grid.innerHTML = html;
+    setTimeout(reveal, 100);
 }
 
 function openLightbox(index) {
